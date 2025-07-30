@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMT: Corazón que Teje el Territorio y Soberanía Informativa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 300px;
+            width: 100%;
+            max-width: 600px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .energetic-blue { color: #00A0B0; }
+        .energetic-red { color: #CC333F; }
+        .energetic-orange { color: #EB6841; }
+        .energetic-yellow { color: #EDC951; }
+        .bg-energetic-blue { background-color: #00A0B0; }
+        .bg-energetic-red { background-color: #CC333F; }
+        .bg-energetic-orange { background-color: #EB6841; }
+        .bg-energetic-yellow { background-color: #EDC951; }
+        .border-energetic-blue { border-color: #00A0B0; }
+        .border-energetic-red { border-color: #CC333F; }
+        .border-energetic-orange { border-color: #EB6841; }
+        .border-energetic-yellow { border-color: #EDC951; }
+        .text-dark-brown { color: #3D2314; }
+        .gradient-bg {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F3F4F6 100%);
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .flow-arrow {
+            position: absolute;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="gradient-bg text-dark-brown">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black energetic-blue mb-2">Sistema de Monitoreo Territorial (SMT)</h1>
+            <p class="text-2xl md:text-3xl font-bold energetic-orange">El Corazón que Teje Nuestro Territorio y Soberanía</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="momento-decisivo" class="card">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl font-bold mb-4 energetic-red">1. El Momento Decisivo: Nuestra Encrucijada Histórica</h2>
+                        <p class="text-lg mb-4">Nos encontramos en un punto de inflexión. Una doble presión, una "pinza estratégica", nos desafía y nos brinda una oportunidad sin precedentes para consolidar nuestro gobierno propio.</p>
+                        <p class="text-lg">La pregunta no es si vamos a actuar, sino <strong class="energetic-blue">cómo vamos a liderar</strong>. Nuestra respuesta definirá el futuro de nuestros pueblos.</p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center space-y-4 p-4">
+                        <div class="w-full text-center">
+                            <div class="text-xl font-bold energetic-orange">🏛️ EXIGENCIA DEL ESTADO (Top-Down)</div>
+                            <div class="text-sm">Nuevos decretos (Catastro, SEIP, ETI) requieren un interlocutor técnico indígena unificado.</div>
+                            <div class="text-5xl energetic-orange animate-bounce">⬇️</div>
+                        </div>
+                        <div class="w-48 h-24 bg-energetic-blue text-white flex items-center justify-center rounded-lg shadow-lg text-center font-bold text-xl">
+                            SMT: Eje Articulador
+                        </div>
+                        <div class="w-full text-center">
+                            <div class="text-5xl energetic-red animate-bounce">⬆️</div>
+                            <div class="text-xl font-bold energetic-red">👥 DEMANDA DE LAS COMUNIDADES (Bottom-Up)</div>
+                            <div class="text-sm">Necesidad urgente de apoyo técnico para formalizar Territorios Indígenas (ETI) y realizar autocensos.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ecosistema-poder" class="card">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="chart-container">
+                            <canvas id="ecosistemaChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left order-1 md:order-2">
+                        <h2 class="text-3xl font-bold mb-4 energetic-orange">2. Un Ecosistema de Poder: El SMT como Eje Articulador</h2>
+                        <p class="text-lg mb-4">Las nuevas leyes no son hechos aislados, sino un sistema de engranajes. El SMT es la pieza clave que los hace girar a nuestro favor, traduciendo las necesidades de las comunidades en un formato válido para el Estado y viceversa.</p>
+                        <p class="text-lg">Con un SMT fuerte, <strong class="energetic-blue">controlamos el flujo de información</strong> y nos convertimos en un actor indispensable para la gobernabilidad del país y de nuestros territorios.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="evolucion-necesaria" class="card">
+                <h2 class="text-3xl font-bold mb-8 text-center energetic-blue">3. La Evolución Necesaria: De la Sobrecarga a la Soberanía</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div class="border-4 border-dashed border-energetic-red p-6 rounded-lg text-center">
+                        <h3 class="text-2xl font-bold mb-4 energetic-red">El SMT que Tenemos</h3>
+                        <p class="mb-4">Un modelo centralizado, reactivo y con capacidad limitada. Colapsará ante la nueva demanda masiva.</p>
+                        <div class="font-mono text-lg p-4 bg-red-50 rounded-md text-left">
+                            <p>SMT-Central 😩</p>
+                            <p class="pl-2">↑ Demanda Comunidad A</p>
+                            <p class="pl-2">↑ Demanda Comunidad B</p>
+                            <p class="pl-2">↑ Demanda Estado</p>
+                            <p class="pl-2">↑ Demanda Comunidad C</p>
+                        </div>
+                    </div>
+                    <div class="border-4 border-solid border-energetic-blue p-6 rounded-lg text-center">
+                        <h3 class="text-2xl font-bold mb-4 energetic-blue">El SMT que Necesitamos</h3>
+                        <p class="mb-4">Un modelo en <strong class="energetic-blue">Red Federada</strong>: proactivo, distribuido y que construye poder desde la base.</p>
+                        <div class="space-y-2 font-mono text-lg p-4 bg-blue-50 rounded-md text-left">
+                            <p class="font-bold">SMT-ONIC (Nodo Central) 🌐</p>
+                            <p class="pl-4">↓↑</p>
+                            <p class="pl-4">Nodos Regionales 🤝</p>
+                            <p class="pl-8">↓↑</p>
+                            <p class="pl-8">Monitores Comunitarios 👣</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-8">
+                    <div class="chart-container h-96">
+                        <canvas id="capacidadChart"></canvas>
+                    </div>
+                     <p class="text-center mt-2 text-sm text-gray-600">El modelo en red multiplica nuestra capacidad de respuesta y acción territorial.</p>
+                </div>
+            </section>
+            
+            <section id="circulo-virtuoso" class="card">
+                <h2 class="text-3xl font-bold mb-8 text-center energetic-orange">4. El C
